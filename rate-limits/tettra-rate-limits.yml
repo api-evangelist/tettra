@@ -1,0 +1,57 @@
+name: Tettra API Rate Limits
+description: >-
+  Tettra's public documentation does not specify explicit rate limits for the
+  REST API. The API is described as experimental, and Tettra reserves the right
+  to make breaking, non-backward-compatible changes. The Search endpoint is
+  documented to return a maximum of 5 page results per request. API access
+  is restricted to Scaling and Enterprise plan subscribers.
+url: https://support.tettra.com/api-overview
+limits:
+  - endpoint: Search
+    path: /api/teams/{team_id}/search
+    method: GET
+    maxResultsPerRequest: 5
+    rateLimitPublished: false
+    notes: >-
+      Returns up to 5 page results per search query. No published rate limit
+      quota. Contact Tettra support for enterprise rate limit details.
+  - endpoint: Create Page
+    path: /api/teams/{team_id}/pages
+    method: POST
+    rateLimitPublished: false
+    notes: >-
+      No published rate limit quota for page creation. API is experimental.
+  - endpoint: Suggest a New Page
+    path: /api/teams/{team_id}/page_requests
+    method: POST
+    rateLimitPublished: false
+    notes: >-
+      No published rate limit quota. Used to suggest new pages for knowledge
+      gaps identified in Slack or other integrations.
+  - endpoint: Suggest Page Update
+    path: /api/teams/{team_id}/pages/{page_id}/suggestions
+    method: POST
+    rateLimitPublished: false
+    notes: >-
+      New endpoint that allows suggesting updates to existing pages for
+      automated content maintenance workflows.
+  - endpoint: Create a Question
+    path: /api/teams/{team_id}/questions
+    method: POST
+    rateLimitPublished: false
+    notes: >-
+      No published rate limit quota for question submission.
+authentication:
+  type: API Key
+  delivery: query parameter
+  parameterName: api_key
+  notes: >-
+    API keys are provisioned through team account settings and are only
+    available on Scaling and Enterprise plans. Keys should be kept secret
+    and not exposed in client-side code.
+generalNotes: >-
+  Tettra does not publish explicit rate limits in its public documentation.
+  The API is marked as experimental, and Tettra may make breaking changes
+  without notice. Developers should implement retry logic with exponential
+  backoff. For high-volume use cases, contact Tettra support or consider
+  using the Zapier integration as an alternative.

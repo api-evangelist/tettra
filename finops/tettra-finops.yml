@@ -1,0 +1,81 @@
+name: Tettra FinOps
+description: >-
+  Financial operations guidance for managing Tettra API and platform costs.
+  Tettra uses a per-user seat-based pricing model. API access is only available
+  on the Scaling ($8/user/month annually) and Enterprise (custom) plans.
+  Cost optimization focuses on right-sizing user seats and choosing annual
+  billing to access the 20% discount.
+url: https://tettra.com/pricing/
+costModel:
+  type: per-seat
+  unit: user/month
+  billingOptions:
+    - monthly
+    - annual
+  annualDiscount: 20%
+  minimumSeats:
+    scaling: 10
+    enterprise: 50
+planCosts:
+  - plan: Scaling
+    monthlyPerUser: 10.00
+    annualPerUser: 8.00
+    minimumMonthlySpend: 100.00
+    minimumAnnualSpend: 960.00
+    apiIncluded: true
+    notes: >-
+      Minimum 10 users. At $8/user/month (annual), minimum annual spend is
+      $960/year. Monthly billing at $10/user brings minimum to $1,200/year.
+      API access is included.
+  - plan: Enterprise
+    monthlyPerUser: custom
+    annualPerUser: custom
+    minimumUsers: 50
+    apiIncluded: true
+    notes: >-
+      Custom pricing; contact Tettra sales. Includes SSO, SCIM, dedicated
+      support, and custom integrations. Typically for large organizations.
+costOptimization:
+  - recommendation: Use annual billing
+    savings: 20% compared to monthly billing
+    notes: >-
+      Annual billing at $8/user/month vs $10/user/month monthly. For 10
+      users, this saves $240/year.
+  - recommendation: Right-size user seats
+    notes: >-
+      Only add users who actively create or edit content. Viewers who only
+      read may not require full seats depending on plan terms. Review seat
+      utilization via the usage analytics dashboard.
+  - recommendation: Leverage Zapier as API alternative
+    notes: >-
+      For simpler automation tasks, Zapier integration may be available at
+      lower cost than upgrading to Scaling solely for API access, depending
+      on existing Zapier subscription.
+  - recommendation: Consolidate knowledge management tooling
+    notes: >-
+      Tettra is best suited as a primary internal wiki. Consolidating from
+      multiple tools (Confluence, Notion, Google Sites) to Tettra may reduce
+      overall tooling costs while gaining AI features.
+apiCostConsiderations:
+  - item: API access requires Scaling or Enterprise plan
+    impact: >-
+      Teams on a lower tier would need to upgrade to access the REST API,
+      increasing minimum spend from $0 to $960/year (10 users, annual).
+  - item: No metered API billing
+    impact: >-
+      API usage is included in the flat per-seat fee; there are no additional
+      per-call or per-request charges documented.
+  - item: Experimental API stability risk
+    impact: >-
+      The API is marked experimental. Integration breakage from undocumented
+      breaking changes could incur developer time costs. Budget for maintenance.
+trialAndFreeTier:
+  freePlan: false
+  freeTrial: true
+  trialDays: 30
+  trialPlans:
+    - Scaling
+  notes: >-
+    A 30-day free trial is available for the Scaling plan without requiring
+    a credit card. Use the trial period to validate API integrations before
+    committing to annual billing.

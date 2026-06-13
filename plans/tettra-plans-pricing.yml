@@ -1,0 +1,61 @@
+name: Tettra Plans and Pricing
+description: >-
+  Tettra offers two main paid plans — Scaling and Enterprise — both requiring
+  a minimum number of users. The API is only available on the Scaling and
+  Enterprise plans. A 30-day free trial is available for the Scaling plan.
+  There is no free tier.
+url: https://tettra.com/pricing/
+plans:
+  - name: Scaling
+    description: >-
+      Core knowledge management plan for growing teams. Includes AI features,
+      Slack and Google Workspace integrations, usage analytics, API access,
+      unlimited storage, and live chat support. Minimum 10 users required.
+    price: 8.00
+    unit: user/month
+    billingPeriod: monthly
+    annualDiscount: 20%
+    minimumUsers: 10
+    freeTrialDays: 30
+    apiAccess: true
+    features:
+      - AI answers and page tagging (Kai)
+      - Slack integration with AI bot
+      - Microsoft Teams integration
+      - Google Workspace integration
+      - Questions and answers workflow
+      - Page requests and suggestions
+      - Usage analytics
+      - REST API access
+      - Unlimited storage
+      - Unlimited version history
+      - Live chat support
+      - Zapier integration
+  - name: Enterprise
+    description: >-
+      Enterprise-grade plan with all Scaling features plus SSO, SCIM
+      provisioning, hands-on onboarding, custom content import, custom
+      reporting, priority support, and custom integrations. Requires
+      contacting sales for custom pricing.
+    price: custom
+    unit: user/month
+    billingPeriod: custom
+    minimumUsers: 50
+    freeTrialDays: 0
+    apiAccess: true
+    features:
+      - All Scaling features
+      - SAML SSO (included)
+      - SCIM user provisioning
+      - Hands-on training and custom onboarding
+      - Custom content import
+      - Custom reporting
+      - Priority support
+      - Custom integrations
+      - Dedicated account manager
+      - Invoice and ACH/wire payment options
+notes: >-
+  API keys are only available on the Scaling and Enterprise plans. The Scaling
+  plan is billed at $8/user/month annually or $10/user/month monthly. Annual
+  billing provides a 20% discount. A 30-day free trial is offered for Scaling.
+  The API is described as experimental and may have breaking changes.

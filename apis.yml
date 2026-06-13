@@ -1,0 +1,78 @@
+aid: tettra
+name: Tettra
+description: >-
+  Tettra is an AI-powered knowledge management system that helps teams curate
+  company policies, processes, and knowledge articles into a searchable internal
+  wiki. It provides a REST API for managing pages, categories, and Q&A workflows,
+  with an AI assistant (Kai) integrated directly into Slack and Microsoft Teams
+  to answer repetitive questions from your knowledge base automatically.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/tettra/refs/heads/main/apis.yml
+created: "2026-06-13"
+modified: "2026-06-13"
+specificationVersion: "0.19"
+type: Index
+tags:
+  - Knowledge Management
+  - AI
+  - Team Collaboration
+  - Wiki
+  - Slack Integration
+  - Q&A Bot
+  - Internal Documentation
+apis:
+  - aid: tettra:tettra-rest-api
+    name: Tettra REST API
+    description: >-
+      A limited experimental REST API for automating common Tettra tasks and
+      building custom integrations. Supports creating pages, searching the
+      knowledge base, suggesting new pages, suggesting page updates, and
+      submitting questions. All endpoints require an API key available on
+      Scaling and Enterprise plans.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://support.tettra.com/api-overview
+    baseURL: https://app.tettra.co/api
+    tags:
+      - Knowledge Management
+      - Pages
+      - Search
+      - Questions
+    properties:
+      - type: Documentation
+        url: https://support.tettra.com/api-overview
+      - type: Authentication
+        url: https://support.tettra.com/api-overview/what-is-the-tettra-api
+      - type: Plans
+        url: plans/tettra-plans-pricing.yml
+      - type: RateLimits
+        url: rate-limits/tettra-rate-limits.yml
+      - type: FinOps
+        url: finops/tettra-finops.yml
+common:
+  - type: Homepage
+    url: https://tettra.com/
+  - type: Documentation
+    url: https://support.tettra.com/api-overview
+  - type: Pricing
+    url: https://tettra.com/pricing/
+  - type: Changelog
+    url: https://changelog.tettra.co/
+  - type: Status
+    url: https://tettra.statuspage.io/
+  - type: Blog
+    url: https://tettra.com/blog/
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/tettra
+  - type: GitHub
+    url: https://github.com/Tettra
+  - type: Integrations
+    url: https://tettra.com/product/
+  - type: Plans
+    url: plans/tettra-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/tettra-rate-limits.yml
+  - type: FinOps
+    url: finops/tettra-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
