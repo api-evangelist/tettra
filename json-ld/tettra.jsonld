@@ -1,0 +1,45 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "tettra": "https://tettra.com/vocabulary#",
+    "api_key": "tettra:apiKey",
+    "team_id": "tettra:teamId",
+    "category_id": "tettra:categoryId",
+    "subcategory_id": "tettra:subcategoryId",
+    "assignees": "tettra:assignees",
+    "updated_at": "dateModified",
+    "pages": "tettra:pages",
+    "query": "tettra:searchQuery",
+    "success": "tettra:success"
+  },
+  "@type": "WebAPI",
+  "name": "Tettra REST API",
+  "description": "A limited experimental REST API for automating common Tettra tasks and building custom integrations.",
+  "url": "https://support.tettra.com/api-overview",
+  "provider": {
+    "@type": "Organization",
+    "name": "Tettra",
+    "url": "https://tettra.com/"
+  },
+  "documentation": "https://support.tettra.com/api-overview",
+  "termsOfService": "https://tettra.com/terms/",
+  "offers": {
+    "@type": "Offer",
+    "description": "API access available on Scaling and Enterprise plans.",
+    "url": "https://tettra.com/pricing/"
+  },
+  "potentialAction": [
+    {
+      "@type": "SearchAction",
+      "name": "Search Pages",
+      "target": "https://app.tettra.co/api/teams/{team_id}/search?api_key={api_key}&query={query}",
+      "description": "Search the Tettra knowledge base for pages matching a query."
+    },
+    {
+      "@type": "CreateAction",
+      "name": "Create Question",
+      "target": "https://app.tettra.co/api/teams/{team_id}/questions",
+      "description": "Submit a new question to the Tettra knowledge base."
+    }
+  ]
+}

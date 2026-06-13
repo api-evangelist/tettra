@@ -1,0 +1,8 @@
+{
+  "api_key": "your-api-key-here",
+  "title": "What is the process for requesting PTO?",
+  "details": "<p>I need to understand the steps to submit a PTO request and how far in advance it needs to be submitted.</p>",
+  "category_id": 7,
+  "subcategory_id": 15,
+  "assignees": [42, 99]
+}

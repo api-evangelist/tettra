@@ -1,0 +1,22 @@
+{
+  "success": true,
+  "query": "onboarding process",
+  "pages": [
+    {
+      "id": 12345,
+      "title": "Employee Onboarding Process",
+      "updated_at": "2026-05-15T10:30:00Z",
+      "url": "https://app.tettra.co/teams/my-company/pages/12345-employee-onboarding-process",
+      "content": "Welcome to the team! This page outlines the steps for onboarding new employees...",
+      "owner": {
+        "id": 42,
+        "name": "Jane Smith"
+      },
+      "category": {
+        "id": 7,
+        "name": "HR & People Ops",
+        "url": "https://app.tettra.co/teams/my-company/categories/7-hr-people-ops"
+      }
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/tettra/main/json-schema/category.json",
+  "title": "Category",
+  "description": "A Tettra category used to organize pages and questions.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "description": "Unique identifier for the category."
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the category."
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL of the category in Tettra."
+    }
+  },
+  "required": ["id", "name"]
+}

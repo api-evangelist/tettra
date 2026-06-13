@@ -1,0 +1,39 @@
+vocabulary:
+  - term: Page
+    definition: >-
+      A document in the Tettra knowledge base that contains company policies,
+      processes, or other reference material authored and maintained by team
+      members.
+  - term: Category
+    definition: >-
+      A top-level organizational grouping used to classify pages and questions
+      within a Tettra team workspace.
+  - term: Subcategory
+    definition: >-
+      A nested grouping beneath a category used to further organize pages and
+      questions in the Tettra knowledge base.
+  - term: Question
+    definition: >-
+      A knowledge request submitted to the Tettra system, typically assigned to
+      one or more subject-matter experts who can provide a documented answer.
+  - term: Kai
+    definition: >-
+      Tettra's AI assistant that integrates with Slack and Microsoft Teams to
+      automatically answer repetitive questions using the team's knowledge base.
+  - term: team_id
+    definition: >-
+      The unique identifier for a Tettra team workspace, used as a path
+      parameter in all API endpoints.
+  - term: api_key
+    definition: >-
+      A credential used to authenticate requests to the Tettra API. Available
+      only on Scaling and Enterprise plans. When used in question-creation
+      endpoints, it determines the identity of the acting user.
+  - term: Assignee
+    definition: >-
+      A Tettra user assigned responsibility for answering a question, identified
+      by their numeric user ID.
+  - term: MCP
+    definition: >-
+      Model Context Protocol – an integration standard that allows Tettra to
+      connect its knowledge base directly to AI assistant workflows.

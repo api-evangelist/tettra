@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/tettra/main/json-schema/create-question-request.json",
+  "title": "CreateQuestionRequest",
+  "description": "Request body for creating a new question in the Tettra knowledge base.",
+  "type": "object",
+  "required": ["api_key", "title"],
+  "properties": {
+    "api_key": {
+      "type": "string",
+      "description": "Your Tettra API key. This determines the asker of the question."
+    },
+    "title": {
+      "type": "string",
+      "description": "The title of the question."
+    },
+    "details": {
+      "type": "string",
+      "description": "Additional details about the question, formatted as HTML."
+    },
+    "category_id": {
+      "type": "integer",
+      "description": "Category identifier for organizing the question."
+    },
+    "subcategory_id": {
+      "type": "integer",
+      "description": "Subcategory identifier. If provided, must belong to the specified category_id."
+    },
+    "assignees": {
+      "type": "array",
+      "description": "Array of user IDs to assign the question to.",
+      "items": {
+        "type": "integer"
+      }
+    }
+  }
+}

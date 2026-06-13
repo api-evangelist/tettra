@@ -42,6 +42,8 @@ apis:
         url: https://support.tettra.com/api-overview
       - type: Authentication
         url: https://support.tettra.com/api-overview/what-is-the-tettra-api
+      - type: OpenAPI
+        url: openapi/openapi.yml
       - type: Plans
         url: plans/tettra-plans-pricing.yml
       - type: RateLimits
