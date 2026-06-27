@@ -51,13 +51,13 @@ apis:
       - type: FinOps
         url: finops/tettra-finops.yml
 common:
-  - type: Homepage
+  - type: Website
     url: https://tettra.com/
   - type: Documentation
     url: https://support.tettra.com/api-overview
   - type: Pricing
     url: https://tettra.com/pricing/
-  - type: Changelog
+  - type: ChangeLog
     url: https://changelog.tettra.co/
   - type: Status
     url: https://tettra.statuspage.io/

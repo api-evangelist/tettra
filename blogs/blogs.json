@@ -2,6 +2,20 @@
   "repo": "tettra",
   "feeds": [
     {
+      "source": "https://tettra.statuspage.io/history.atom",
+      "feed_url": "https://tettra.statuspage.io/history.atom",
+      "title": "",
+      "saved": 0,
+      "method": "feed"
+    },
+    {
+      "source": "https://open.tettra.com/feed/",
+      "feed_url": "https://open.tettra.com/feed/",
+      "title": "",
+      "saved": 0,
+      "method": "feed"
+    },
+    {
       "source": "https://tettra.statuspage.io/",
       "feed_url": "https://tettra.statuspage.io/history.atom",
       "title": "",
@@ -10,5 +24,5 @@
     }
   ],
   "post_count": 0,
-  "fetched": "2026-06-14T20:42:17Z"
+  "fetched": "2026-06-27T12:03:07Z"
 }
