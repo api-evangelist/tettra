@@ -51,6 +51,10 @@ apis:
       - type: FinOps
         url: finops/tettra-finops.yml
 common:
+  - type: DomainSecurity
+    url: security/tettra-domain-security.yml
+  - type: Authentication
+    url: authentication/tettra-authentication.yml
   - type: Website
     url: https://tettra.com/
   - type: Documentation

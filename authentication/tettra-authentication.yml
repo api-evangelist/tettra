@@ -1,0 +1,17 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - query
+schemes:
+- name: apiKey
+  type: apiKey
+  in: query
+  parameter: api_key
+  description: API key for authentication. Available on Scaling and Enterprise plans. Determines
+    the acting user for operations such as creating questions.
+  sources:
+  - openapi/openapi.yml
