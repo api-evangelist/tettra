@@ -51,6 +51,8 @@ apis:
       - type: FinOps
         url: finops/tettra-finops.yml
 common:
+  - type: AgenticAccess
+    url: agentic-access/tettra-agentic-access.yml
   - type: DomainSecurity
     url: security/tettra-domain-security.yml
   - type: Authentication
