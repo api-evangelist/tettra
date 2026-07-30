@@ -6,7 +6,20 @@ description: >-
   wiki. It provides a REST API for managing pages, categories, and Q&A workflows,
   with an AI assistant (Kai) integrated directly into Slack and Microsoft Teams
   to answer repetitive questions from your knowledge base automatically.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: paid
+  onboarding: self-serve
+  trial: true
+  try_now: true
+  public: false
+  label: Paid (free trial) · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/tettra.png
 url: https://raw.githubusercontent.com/api-evangelist/tettra/refs/heads/main/apis.yml
 created: "2026-06-13"
 modified: "2026-06-13"
@@ -21,35 +34,26 @@ tags:
   - Q&A Bot
   - Internal Documentation
 apis:
-  - aid: tettra:tettra-rest-api
-    name: Tettra REST API
-    description: >-
-      A limited experimental REST API for automating common Tettra tasks and
-      building custom integrations. Supports creating pages, searching the
-      knowledge base, suggesting new pages, suggesting page updates, and
-      submitting questions. All endpoints require an API key available on
-      Scaling and Enterprise plans.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://support.tettra.com/api-overview
-    baseURL: https://app.tettra.co/api
-    tags:
-      - Knowledge Management
-      - Pages
-      - Search
-      - Questions
-    properties:
-      - type: Documentation
-        url: https://support.tettra.com/api-overview
-      - type: Authentication
-        url: https://support.tettra.com/api-overview/what-is-the-tettra-api
-      - type: OpenAPI
-        url: openapi/openapi.yml
-      - type: Plans
-        url: plans/tettra-plans-pricing.yml
-      - type: RateLimits
-        url: rate-limits/tettra-rate-limits.yml
-      - type: FinOps
-        url: finops/tettra-finops.yml
+- aid: tettra:tettra-teams-api
+  name: Tettra Teams API
+  description: The Teams API from Tettra — 2 operation(s) for teams.
+  humanURL: https://support.tettra.com/api-overview
+  baseURL: https://app.tettra.co/api
+  tags:
+  - Teams
+  properties:
+  - type: OpenAPI
+    url: openapi/tettra-teams-api-openapi.yml
+  - type: Documentation
+    url: https://support.tettra.com/api-overview
+  - type: Authentication
+    url: https://support.tettra.com/api-overview/what-is-the-tettra-api
+  - type: Plans
+    url: plans/tettra-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/tettra-rate-limits.yml
+  - type: FinOps
+    url: finops/tettra-finops.yml
 common:
   - type: AgenticAccess
     url: agentic-access/tettra-agentic-access.yml
