@@ -1,0 +1,14 @@
+{
+  "provider": "tettra",
+  "sources": [
+    "tettra-teams-api-openapi.yml"
+  ],
+  "outputs": [
+    "tettra-teams-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

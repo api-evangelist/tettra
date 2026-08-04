@@ -1,0 +1,213 @@
+openapi: 3.1.0
+info:
+  title: Tettra REST API
+  description: >-
+    A limited experimental REST API for automating common Tettra tasks and
+    building custom integrations. Supports creating pages, searching the
+    knowledge base, suggesting new pages, suggesting page updates, and
+    submitting questions. All endpoints require an API key available on
+    Scaling and Enterprise plans.
+  version: 1.0.0
+  contact:
+    url: https://support.tettra.com/api-overview
+  termsOfService: https://tettra.com/terms/
+servers:
+  - url: https://app.tettra.co/api
+    description: Tettra API
+security:
+  - apiKey: []
+paths:
+  /teams/{team_id}/search:
+    get:
+      operationId: searchPages
+      summary: Search pages
+      description: >-
+        Search for pages in the Tettra knowledge base. Results are ranked by
+        page title matches, header matches (H1–H3), and page content. Returns
+        up to 5 results. Omitting the query parameter returns the most recent
+        pages.
+      parameters:
+        - name: team_id
+          in: path
+          required: true
+          description: The identifier for the Tettra team.
+          schema:
+            type: string
+        - name: api_key
+          in: query
+          required: true
+          description: Your Tettra API key for authentication.
+          schema:
+            type: string
+        - name: query
+          in: query
+          required: false
+          description: >-
+            The search term to query the knowledge base. If omitted, the most
+            recent pages are returned.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful search response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchResponse'
+        '401':
+          description: Unauthorized – invalid or missing API key.
+        '404':
+          description: Team not found.
+  /teams/{team_id}/questions:
+    post:
+      operationId: createQuestion
+      summary: Create a question
+      description: >-
+        Publish a new question to the Tettra knowledge base. The API key
+        determines the asker of the question. Questions can optionally be
+        assigned to specific users and organized under a category or
+        subcategory.
+      parameters:
+        - name: team_id
+          in: path
+          required: true
+          description: The identifier for the Tettra team.
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateQuestionRequest'
+      responses:
+        '200':
+          description: Question created successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateQuestionResponse'
+        '401':
+          description: Unauthorized – invalid or missing API key.
+        '404':
+          description: Team not found.
+        '422':
+          description: Validation error – missing required fields or invalid values.
+components:
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: query
+      name: api_key
+      description: >-
+        API key for authentication. Available on Scaling and Enterprise plans.
+        Determines the acting user for operations such as creating questions.
+  schemas:
+    SearchResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          description: Whether the search request was successful.
+        query:
+          type: string
+          description: The search term that was used.
+        pages:
+          type: array
+          description: Array of up to 5 matching page results.
+          items:
+            $ref: '#/components/schemas/PageResult'
+    PageResult:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Unique identifier for the page.
+        title:
+          type: string
+          description: Title of the page.
+        updated_at:
+          type: string
+          format: date-time
+          description: ISO 8601 timestamp of when the page was last updated.
+        url:
+          type: string
+          format: uri
+          description: URL of the page in Tettra.
+        content:
+          type: string
+          description: Text content of the page.
+        owner:
+          type: object
+          description: The user who owns the page.
+          properties:
+            id:
+              type: integer
+              description: User identifier.
+            name:
+              type: string
+              description: Display name of the page owner.
+        category:
+          $ref: '#/components/schemas/Category'
+    Category:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Unique identifier for the category.
+        name:
+          type: string
+          description: Name of the category.
+        url:
+          type: string
+          format: uri
+          description: URL of the category in Tettra.
+    CreateQuestionRequest:
+      type: object
+      required:
+        - api_key
+        - title
+      properties:
+        api_key:
+          type: string
+          description: >-
+            Your Tettra API key. This determines the asker of the question.
+        title:
+          type: string
+          description: The title of the question.
+        details:
+          type: string
+          description: Additional details about the question, formatted as HTML.
+        category_id:
+          type: integer
+          description: Category identifier for organizing the question.
+        subcategory_id:
+          type: integer
+          description: >-
+            Subcategory identifier. If provided, must belong to the specified
+            category_id.
+        assignees:
+          type: array
+          description: Array of user IDs to assign the question to.
+          items:
+            type: integer
+    CreateQuestionResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          description: Whether the question was created successfully.
+        question:
+          type: object
+          description: The created question object.
+          properties:
+            id:
+              type: integer
+              description: Unique identifier for the created question.
+            title:
+              type: string
+              description: Title of the question.
+            url:
+              type: string
+              format: uri
+              description: URL of the question in Tettra.
