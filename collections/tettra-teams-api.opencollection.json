@@ -1,0 +1,80 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Tettra REST Teams API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Teams",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search pages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.tettra.co/api/teams/:team_id/search",
+            "params": [
+              {
+                "name": "team_id",
+                "value": "",
+                "type": "path",
+                "description": "The identifier for the Tettra team."
+              },
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "Your Tettra API key for authentication."
+              },
+              {
+                "name": "query",
+                "value": "",
+                "type": "query",
+                "description": "The search term to query the knowledge base. If omitted, the most recent pages are returned."
+              }
+            ]
+          },
+          "docs": "Search for pages in the Tettra knowledge base. Results are ranked by page title matches, header matches (H1–H3), and page content. Returns up to 5 results. Omitting the query parameter returns the most recent pages."
+        },
+        {
+          "info": {
+            "name": "Create a question",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.tettra.co/api/teams/:team_id/questions",
+            "params": [
+              {
+                "name": "team_id",
+                "value": "",
+                "type": "path",
+                "description": "The identifier for the Tettra team."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Publish a new question to the Tettra knowledge base. The API key determines the asker of the question. Questions can optionally be assigned to specific users and organized under a category or subcategory."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
