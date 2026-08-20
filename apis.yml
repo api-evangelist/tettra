@@ -26,6 +26,14 @@ modified: "2026-06-13"
 specificationVersion: '0.23'
 type: Index
 tags:
+  - Knowledge-Management
+  - Artificial Intelligence
+  - Team Collaboration
+  - Wiki
+  - Slack Integration
+  - Q&A Bot
+  - Internal Documentation
+tags_raw:
   - Knowledge Management
   - AI
   - Team Collaboration
@@ -40,6 +48,8 @@ apis:
   humanURL: https://support.tettra.com/api-overview
   baseURL: https://app.tettra.co/api
   tags:
+  - Team
+  tags_raw:
   - Teams
   properties:
   - type: OpenAPI
