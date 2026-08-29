@@ -6,6 +6,18 @@ description: >-
   wiki. It provides a REST API for managing pages, categories, and Q&A workflows,
   with an AI assistant (Kai) integrated directly into Slack and Microsoft Teams
   to answer repetitive questions from your knowledge base automatically.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: paid
   onboarding: self-serve
