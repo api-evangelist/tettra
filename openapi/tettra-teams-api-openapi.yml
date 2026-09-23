@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Tettra REST Teams API
   description: A limited experimental REST API for automating common Tettra tasks and building custom integrations. Supports creating pages, searching the knowledge base, suggesting new pages, suggesting page updates, and submitting questions. All endpoints require an API key available on Scaling and Enterprise plans.
@@ -86,19 +86,20 @@ paths:
       - Teams
 components:
   schemas:
-    Category:
+    SearchResponse:
       type: object
       properties:
-        id:
-          type: integer
-          description: Unique identifier for the category.
-        name:
+        success:
+          type: boolean
+          description: Whether the search request was successful.
+        query:
           type: string
-          description: Name of the category.
-        url:
-          type: string
-          format: uri
-          description: URL of the category in Tettra.
+          description: The search term that was used.
+        pages:
+          type: array
+          description: Array of up to 5 matching page results.
+          items:
+            $ref: '#/components/schemas/PageResult'
     CreateQuestionResponse:
       type: object
       properties:
@@ -119,46 +120,19 @@ components:
               type: string
               format: uri
               description: URL of the question in Tettra.
-    SearchResponse:
+    Category:
       type: object
       properties:
-        success:
-          type: boolean
-          description: Whether the search request was successful.
-        query:
-          type: string
-          description: The search term that was used.
-        pages:
-          type: array
-          description: Array of up to 5 matching page results.
-          items:
-            $ref: '#/components/schemas/PageResult'
-    CreateQuestionRequest:
-      type: object
-      required:
-      - api_key
-      - title
-      properties:
-        api_key:
-          type: string
-          description: Your Tettra API key. This determines the asker of the question.
-        title:
-          type: string
-          description: The title of the question.
-        details:
-          type: string
-          description: Additional details about the question, formatted as HTML.
-        category_id:
+        id:
           type: integer
-          description: Category identifier for organizing the question.
-        subcategory_id:
-          type: integer
-          description: Subcategory identifier. If provided, must belong to the specified category_id.
-        assignees:
-          type: array
-          description: Array of user IDs to assign the question to.
-          items:
-            type: integer
+          description: Unique identifier for the category.
+        name:
+          type: string
+          description: Name of the category.
+        url:
+          type: string
+          format: uri
+          description: URL of the category in Tettra.
     PageResult:
       type: object
       properties:
@@ -191,6 +165,32 @@ components:
               description: Display name of the page owner.
         category:
           $ref: '#/components/schemas/Category'
+    CreateQuestionRequest:
+      type: object
+      required:
+      - api_key
+      - title
+      properties:
+        api_key:
+          type: string
+          description: Your Tettra API key. This determines the asker of the question.
+        title:
+          type: string
+          description: The title of the question.
+        details:
+          type: string
+          description: Additional details about the question, formatted as HTML.
+        category_id:
+          type: integer
+          description: Category identifier for organizing the question.
+        subcategory_id:
+          type: integer
+          description: Subcategory identifier. If provided, must belong to the specified category_id.
+        assignees:
+          type: array
+          description: Array of user IDs to assign the question to.
+          items:
+            type: integer
   securitySchemes:
     apiKey:
       type: apiKey
