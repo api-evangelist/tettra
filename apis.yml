@@ -38,7 +38,7 @@ modified: "2026-06-13"
 specificationVersion: '0.23'
 type: Index
 tags:
-  - Knowledge-Management
+  - Knowledge Management
   - Artificial Intelligence
   - Team Collaboration
   - Wiki
@@ -53,6 +53,7 @@ tags_raw:
   - Slack Integration
   - Q&A Bot
   - Internal Documentation
+  - Knowledge-Management
 apis:
 - aid: tettra:tettra-teams-api
   name: Tettra Teams API

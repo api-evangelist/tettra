@@ -86,40 +86,6 @@ paths:
       - Teams
 components:
   schemas:
-    SearchResponse:
-      type: object
-      properties:
-        success:
-          type: boolean
-          description: Whether the search request was successful.
-        query:
-          type: string
-          description: The search term that was used.
-        pages:
-          type: array
-          description: Array of up to 5 matching page results.
-          items:
-            $ref: '#/components/schemas/PageResult'
-    CreateQuestionResponse:
-      type: object
-      properties:
-        success:
-          type: boolean
-          description: Whether the question was created successfully.
-        question:
-          type: object
-          description: The created question object.
-          properties:
-            id:
-              type: integer
-              description: Unique identifier for the created question.
-            title:
-              type: string
-              description: Title of the question.
-            url:
-              type: string
-              format: uri
-              description: URL of the question in Tettra.
     Category:
       type: object
       properties:
@@ -165,6 +131,40 @@ components:
               description: Display name of the page owner.
         category:
           $ref: '#/components/schemas/Category'
+    SearchResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          description: Whether the search request was successful.
+        query:
+          type: string
+          description: The search term that was used.
+        pages:
+          type: array
+          description: Array of up to 5 matching page results.
+          items:
+            $ref: '#/components/schemas/PageResult'
+    CreateQuestionResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          description: Whether the question was created successfully.
+        question:
+          type: object
+          description: The created question object.
+          properties:
+            id:
+              type: integer
+              description: Unique identifier for the created question.
+            title:
+              type: string
+              description: Title of the question.
+            url:
+              type: string
+              format: uri
+              description: URL of the question in Tettra.
     CreateQuestionRequest:
       type: object
       required:
