@@ -86,19 +86,6 @@ paths:
       - Teams
 components:
   schemas:
-    Category:
-      type: object
-      properties:
-        id:
-          type: integer
-          description: Unique identifier for the category.
-        name:
-          type: string
-          description: Name of the category.
-        url:
-          type: string
-          format: uri
-          description: URL of the category in Tettra.
     PageResult:
       type: object
       properties:
@@ -165,6 +152,19 @@ components:
               type: string
               format: uri
               description: URL of the question in Tettra.
+    Category:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Unique identifier for the category.
+        name:
+          type: string
+          description: Name of the category.
+        url:
+          type: string
+          format: uri
+          description: URL of the category in Tettra.
     CreateQuestionRequest:
       type: object
       required:
