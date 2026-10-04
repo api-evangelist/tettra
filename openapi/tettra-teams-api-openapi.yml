@@ -86,6 +86,39 @@ paths:
       - Teams
 components:
   schemas:
+    Category:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Unique identifier for the category.
+        name:
+          type: string
+          description: Name of the category.
+        url:
+          type: string
+          format: uri
+          description: URL of the category in Tettra.
+    CreateQuestionResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          description: Whether the question was created successfully.
+        question:
+          type: object
+          description: The created question object.
+          properties:
+            id:
+              type: integer
+              description: Unique identifier for the created question.
+            title:
+              type: string
+              description: Title of the question.
+            url:
+              type: string
+              format: uri
+              description: URL of the question in Tettra.
     PageResult:
       type: object
       properties:
@@ -132,39 +165,6 @@ components:
           description: Array of up to 5 matching page results.
           items:
             $ref: '#/components/schemas/PageResult'
-    CreateQuestionResponse:
-      type: object
-      properties:
-        success:
-          type: boolean
-          description: Whether the question was created successfully.
-        question:
-          type: object
-          description: The created question object.
-          properties:
-            id:
-              type: integer
-              description: Unique identifier for the created question.
-            title:
-              type: string
-              description: Title of the question.
-            url:
-              type: string
-              format: uri
-              description: URL of the question in Tettra.
-    Category:
-      type: object
-      properties:
-        id:
-          type: integer
-          description: Unique identifier for the category.
-        name:
-          type: string
-          description: Name of the category.
-        url:
-          type: string
-          format: uri
-          description: URL of the category in Tettra.
     CreateQuestionRequest:
       type: object
       required:
