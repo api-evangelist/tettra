@@ -1,0 +1,26 @@
+slug: tettra
+provider: Tettra
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: Teams
+  spec_file: tettra-teams-api-openapi.yml
+  capability_id: BC-830.30
+  capability_id_l1: BC-830
+  capability_name: Knowledge Sharing & Collaboration Management
+  confidence: 0.7
+  evidence: searchPages  Search pages; createQuestion  Create a question ... "searching the knowledge
+    base ... submitting questions"
+  reason: Operations search the internal wiki knowledge base and submit questions to it, i.e. knowledge
+    retrieval and Q&A collaboration within a knowledge management system. The 'Teams' tag here is merely
+    the URL scope (/teams/{team_id}), not HR or team administration.

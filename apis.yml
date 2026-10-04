@@ -78,6 +78,9 @@ apis:
   - type: FinOps
     url: finops/tettra-finops.yml
 common:
+  - type: CapabilityMap
+    url: capabilities/tettra-capability-edges.yml
+    name: Tettra Business Capability Map
   - type: AgenticAccess
     url: agentic-access/tettra-agentic-access.yml
   - type: DomainSecurity
