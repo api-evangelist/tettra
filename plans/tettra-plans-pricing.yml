@@ -1,3 +1,7 @@
+# Provenance stamped 2026-10-07 (roadmap#943): written by an API Evangelist sweep (undated — the file carries no date and git cannot supply one), not
+# harvested from the provider. `method: generated` so the economics campaign may replace it with a
+# dated, verbatim transcription; every figure below is unverified until it does.
+method: generated
 name: Tettra Plans and Pricing
 description: >-
   Tettra offers two main paid plans — Scaling and Enterprise — both requiring
@@ -59,3 +63,25 @@ notes: >-
   plan is billed at $8/user/month annually or $10/user/month monthly. Annual
   billing provides a 20% discount. A 30-day free trial is offered for Scaling.
   The API is described as experimental and may have breaking changes.
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - negotiated
+  - subscription
+  units: []
+  plans:
+  - name: Scaling
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods: []
+  - name: Enterprise
+    access: other
+    model: negotiated
+    model_how: derived
+    units:
+    - other
+    periods: []
