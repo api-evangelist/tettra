@@ -119,6 +119,32 @@ components:
               type: string
               format: uri
               description: URL of the question in Tettra.
+    CreateQuestionRequest:
+      type: object
+      required:
+      - api_key
+      - title
+      properties:
+        api_key:
+          type: string
+          description: Your Tettra API key. This determines the asker of the question.
+        title:
+          type: string
+          description: The title of the question.
+        details:
+          type: string
+          description: Additional details about the question, formatted as HTML.
+        category_id:
+          type: integer
+          description: Category identifier for organizing the question.
+        subcategory_id:
+          type: integer
+          description: Subcategory identifier. If provided, must belong to the specified category_id.
+        assignees:
+          type: array
+          description: Array of user IDs to assign the question to.
+          items:
+            type: integer
     PageResult:
       type: object
       properties:
@@ -165,32 +191,6 @@ components:
           description: Array of up to 5 matching page results.
           items:
             $ref: '#/components/schemas/PageResult'
-    CreateQuestionRequest:
-      type: object
-      required:
-      - api_key
-      - title
-      properties:
-        api_key:
-          type: string
-          description: Your Tettra API key. This determines the asker of the question.
-        title:
-          type: string
-          description: The title of the question.
-        details:
-          type: string
-          description: Additional details about the question, formatted as HTML.
-        category_id:
-          type: integer
-          description: Category identifier for organizing the question.
-        subcategory_id:
-          type: integer
-          description: Subcategory identifier. If provided, must belong to the specified category_id.
-        assignees:
-          type: array
-          description: Array of user IDs to assign the question to.
-          items:
-            type: integer
   securitySchemes:
     apiKey:
       type: apiKey
